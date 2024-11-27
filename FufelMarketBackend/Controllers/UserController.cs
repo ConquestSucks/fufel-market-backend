@@ -33,7 +33,7 @@ namespace FufelMarketBackend.Controllers
                 return NotFound();
             }
 
-            return user;
+            return Ok(user);
         }
     }
 }

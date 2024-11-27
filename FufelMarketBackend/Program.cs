@@ -1,6 +1,7 @@
 using FufelMarketBackend.Data;
 using FufelMarketBackend.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.Listen(IPAddress.Any, 7151);
+});
+
 var app = builder.Build();
 
 app.UseCors("AllowAll");
@@ -30,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

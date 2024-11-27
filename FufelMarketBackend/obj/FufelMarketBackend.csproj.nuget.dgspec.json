@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mikhailo\\Desktop\\fufel-market-backend\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj": {}
+    "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mikhailo\\Desktop\\fufel-market-backend\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj": {
+    "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mikhailo\\Desktop\\fufel-market-backend\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj",
+        "projectUniqueName": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj",
         "projectName": "FufelMarketBackend",
-        "projectPath": "C:\\Users\\Mikhailo\\Desktop\\fufel-market-backend\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj",
+        "projectPath": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\FufelMarketBackend.csproj",
         "packagesPath": "C:\\Users\\Mikhailo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mikhailo\\Desktop\\fufel-market-backend\\FufelMarketBackend\\FufelMarketBackend\\obj\\",
+        "outputPath": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

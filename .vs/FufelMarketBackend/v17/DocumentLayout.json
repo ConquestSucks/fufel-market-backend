@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|c:\\users\\mikhailo\\desktop\\fufelmarketbackend\\fufelmarketbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|solutionrelative:fufelmarketbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|c:\\users\\mikhailo\\desktop\\fufelmarketbackend\\fufelmarketbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|solutionrelative:fufelmarketbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|c:\\users\\mikhailo\\desktop\\fufelmarketbackend\\fufelmarketbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|solutionrelative:fufelmarketbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +19,8 @@
       "RelativeMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|solutionrelative:fufelmarketbackend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|c:\\users\\mikhailo\\desktop\\fufelmarketbackend\\fufelmarketbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|solutionrelative:fufelmarketbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|c:\\users\\mikhailo\\desktop\\fufelmarketbackend\\fufelmarketbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|solutionrelative:fufelmarketbackend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|c:\\users\\mikhailo\\desktop\\fufelmarketbackend\\fufelmarketbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A5233CC8-9962-4B48-8CC1-287023A3C1F7}|FufelMarketBackend\\FufelMarketBackend.csproj|solutionrelative:fufelmarketbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "FufelMarketBackend\\Data\\AppDbContext.cs",
@@ -47,20 +47,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\appsettings.json",
               "RelativeDocumentMoniker": "FufelMarketBackend\\appsettings.json",
               "ToolTip": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\appsettings.json",
               "RelativeToolTip": "FufelMarketBackend\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-11-27T14:42:44.599Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "FufelMarketBackend\\Controllers\\UserController.cs",
@@ -73,12 +73,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\Program.cs",
               "RelativeDocumentMoniker": "FufelMarketBackend\\Program.cs",
-              "ToolTip": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\Program.cs*",
-              "RelativeToolTip": "FufelMarketBackend\\Program.cs*",
+              "ToolTip": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\Program.cs",
+              "RelativeToolTip": "FufelMarketBackend\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T13:42:44.39Z",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Mikhailo\\Desktop\\FufelMarketBackend\\FufelMarketBackend\\Models\\User.cs",
               "RelativeDocumentMoniker": "FufelMarketBackend\\Models\\User.cs",

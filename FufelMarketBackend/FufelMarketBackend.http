@@ -1,0 +1,6 @@
+@FufelMarketBackend_HostAddress = http://localhost:5218
+
+GET {{FufelMarketBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

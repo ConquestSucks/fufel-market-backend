@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FufelMarketBackend.Models;
 
-public partial class User
+public sealed class User
 {
     public int Id { get; set; }
+    
+    [StringLength(15)]
+    public required string FirstName { get; set; }
+    
+    [StringLength(15)]
+    public required string LastName { get; set; }
+    
+    public string FullName => $"{FirstName} {LastName}";
+    
+    [StringLength(40)]
+    public required string Email { get; set; }
+    
+    [StringLength(100)]
+    public required string PasswordHash { get; set; }
 
-    public string Role { get; set; } = null!;
-
-    public string Name { get; set; } = null!;
-
-    public string Email { get; set; } = null!;
-
-    public string? Phone { get; set; }
-
-    public virtual ICollection<Ad> Ads { get; set; } = new List<Ad>();
-
-    public virtual ICollection<Feedback> FeedbackAdOwners { get; set; } = new List<Feedback>();
-
-    public virtual ICollection<Feedback> FeedbackAuthors { get; set; } = new List<Feedback>();
+    [StringLength(12)]
+    public string PhoneNumber { get; set; } = string.Empty;
 }

@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FufelMarketBackend.Models;
 
-public partial class Feedback
+public sealed class Feedback
 {
     public int Id { get; set; }
-
+    
     public int AuthorId { get; set; }
-
-    public int AdOwnerId { get; set; }
-
-    public int AdId { get; set; }
-
-    public double Score { get; set; }
-
-    public string? Text { get; set; }
-
-    public virtual Ad Ad { get; set; } = null!;
-
-    public virtual User AdOwner { get; set; } = null!;
-
-    public virtual User Author { get; set; } = null!;
+    
+    public int AdvertisementId { get; set; }
+    
+    public int Score { get; set; }
+    
+    [StringLength(300)]
+    public required string FeedbackText { get; set; }
+    
+    public required User Author { get; set; }
+    
+    public required Advertisement Advertisement { get; set; }
 }

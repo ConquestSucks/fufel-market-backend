@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FufelMarketBackend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241128162548_Initial")]
-    partial class Initial
+    [Migration("20241130164204_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace FufelMarketBackend.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -65,6 +68,56 @@ namespace FufelMarketBackend.Migrations
                     b.ToTable("Ads");
                 });
 
+            modelBuilder.Entity("FufelMarketBackend.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AdvertisementId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdvertisementId")
+                        .IsUnique();
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("FufelMarketBackend.Models.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AdvertisementId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TimeZone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdvertisementId")
+                        .IsUnique();
+
+                    b.ToTable("Citys");
+                });
+
             modelBuilder.Entity("FufelMarketBackend.Models.Feedback", b =>
                 {
                     b.Property<int>("Id")
@@ -96,6 +149,28 @@ namespace FufelMarketBackend.Migrations
                     b.ToTable("Feedbacks");
                 });
 
+            modelBuilder.Entity("FufelMarketBackend.Models.SubCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("SubCategories");
+                });
+
             modelBuilder.Entity("FufelMarketBackend.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -121,8 +196,8 @@ namespace FufelMarketBackend.Migrations
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("character varying(2000)");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -137,12 +212,34 @@ namespace FufelMarketBackend.Migrations
             modelBuilder.Entity("FufelMarketBackend.Models.Advertisement", b =>
                 {
                     b.HasOne("FufelMarketBackend.Models.User", "User")
-                        .WithMany()
+                        .WithMany("Advertisements")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("FufelMarketBackend.Models.Category", b =>
+                {
+                    b.HasOne("FufelMarketBackend.Models.Advertisement", "Advertisement")
+                        .WithOne("Category")
+                        .HasForeignKey("FufelMarketBackend.Models.Category", "AdvertisementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Advertisement");
+                });
+
+            modelBuilder.Entity("FufelMarketBackend.Models.City", b =>
+                {
+                    b.HasOne("FufelMarketBackend.Models.Advertisement", "Advertisement")
+                        .WithOne("City")
+                        .HasForeignKey("FufelMarketBackend.Models.City", "AdvertisementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Advertisement");
                 });
 
             modelBuilder.Entity("FufelMarketBackend.Models.Feedback", b =>
@@ -164,9 +261,36 @@ namespace FufelMarketBackend.Migrations
                     b.Navigation("Author");
                 });
 
+            modelBuilder.Entity("FufelMarketBackend.Models.SubCategory", b =>
+                {
+                    b.HasOne("FufelMarketBackend.Models.Category", "Category")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("FufelMarketBackend.Models.Advertisement", b =>
                 {
+                    b.Navigation("Category")
+                        .IsRequired();
+
+                    b.Navigation("City")
+                        .IsRequired();
+
                     b.Navigation("Feedbacks");
+                });
+
+            modelBuilder.Entity("FufelMarketBackend.Models.Category", b =>
+                {
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("FufelMarketBackend.Models.User", b =>
+                {
+                    b.Navigation("Advertisements");
                 });
 #pragma warning restore 612, 618
         }

@@ -19,4 +19,10 @@ public class AppDbContext : DbContext
     public virtual DbSet<Feedback> Feedbacks { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
+
+    public virtual DbSet<Category> Categories { get; set; }
+
+    public virtual DbSet<SubCategory> SubCategories { get; set; }
+
+    public virtual DbSet<City> Citys { get; set; }
 }

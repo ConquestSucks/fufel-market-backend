@@ -22,4 +22,6 @@ public sealed class User
 
     [StringLength(12)]
     public string PhoneNumber { get; set; } = string.Empty;
+
+    public ICollection<Advertisement> Advertisements { get; set;} = new List<Advertisement>();
 }

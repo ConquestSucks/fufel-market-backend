@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FufelMarketBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8771fa64c948deda538819f0d3013339e220babd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d939c8400cda2755eab3637433dbc9296592d4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("FufelMarketBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FufelMarketBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

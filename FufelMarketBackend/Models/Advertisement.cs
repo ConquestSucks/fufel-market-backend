@@ -8,6 +8,8 @@ public sealed class Advertisement
     
     public int UserId { get; set; }
 
+    public int CategoryId { get; set; }
+
     public DateTime CreatedAt { get; set; }
 
     public DateTime UpdatedAt { get; set; }
@@ -24,11 +26,11 @@ public sealed class Advertisement
 
     public ulong Price { get; set; }
     
-    //public required string City { get; set; } TODO: отдельная таблица
+    public required City City { get; set; }
 
-    //public string Category { get; set; } = null!; TODO: отдельная таблица
-    
+    public required Category Category { get; set; } 
+
     public required User User { get; set; }
 
-    public ICollection<Feedback> Feedbacks { get; init; } = new List<Feedback>();
+    public ICollection<Feedback> Feedbacks { get; init; } = [];
 }

@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "FufelMarketBackend.Controllers.AdvertismentController",
-    "Method": "Get",
+    "Method": "GetAd",
     "RelativePath": "api/Advertisment/getAd/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -27,7 +27,7 @@
   },
   {
     "ContainingType": "FufelMarketBackend.Controllers.AdvertismentController",
-    "Method": "GetAdvertisements",
+    "Method": "GetAds",
     "RelativePath": "api/Advertisment/getAds",
     "HttpMethod": "GET",
     "IsController": true,
@@ -36,6 +36,156 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[FufelMarketBackend.Models.Advertisement, FufelMarketBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FufelMarketBackend.Controllers.AdvertismentController",
+    "Method": "GetAdsByCity",
+    "RelativePath": "api/Advertisment/getAdsByCityId/{cityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[FufelMarketBackend.Models.Advertisement, FufelMarketBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FufelMarketBackend.Controllers.AdvertismentController",
+    "Method": "PostAd",
+    "RelativePath": "api/Advertisment/postAdd",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "advertisementVm",
+        "Type": "FufelMarketBackend.Vms.AdvertisementVm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FufelMarketBackend.Controllers.CategoryController",
+    "Method": "GetAdvertisements",
+    "RelativePath": "api/Category/getCategories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FufelMarketBackend.Models.Category, FufelMarketBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FufelMarketBackend.Controllers.CategoryController",
+    "Method": "Get",
+    "RelativePath": "api/Category/getCategory/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FufelMarketBackend.Models.Category",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FufelMarketBackend.Controllers.CityController",
+    "Method": "PostCity",
+    "RelativePath": "api/City/addCity",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cityName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FufelMarketBackend.Controllers.CityController",
+    "Method": "GetCities",
+    "RelativePath": "api/City/getCities",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FufelMarketBackend.Models.City, FufelMarketBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FufelMarketBackend.Controllers.CityController",
+    "Method": "GetCity",
+    "RelativePath": "api/City/getCity/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FufelMarketBackend.Models.City",
         "MediaTypes": [
           "text/plain",
           "application/json",

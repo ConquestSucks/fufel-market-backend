@@ -8,11 +8,6 @@ namespace FufelMarketBackend.Models
 
         public required string Name { get; set; }
 
-        public required int AdvertisementId { get; set; }
-
-        [ForeignKey("AdvertisementId")]
-        public required Advertisement Advertisement { get; set; }
-
-        public required ICollection<SubCategory> SubCategories { get; set; }
+        public required ICollection<SubCategory>? SubCategories { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace FufelMarketBackend.Controllers
         }
 
         [HttpGet("getCategory/{id:int}")]
-        public async Task<Category> Get(int id)
+        public async Task<Category?> Get(int id)
         {
             return await context.Categories.FirstOrDefaultAsync(ad => ad.Id == id);
         }

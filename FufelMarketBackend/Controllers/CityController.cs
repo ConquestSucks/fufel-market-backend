@@ -20,5 +20,25 @@ namespace FufelMarketBackend.Controllers
         {
             return await context.Citys.FirstOrDefaultAsync(ad => ad.Id == id);
         }
+
+        [HttpPost("addCity")]
+        public async Task<ActionResult> PostCity(string cityName) { 
+            var cities = await context.Citys.ToListAsync();
+
+            if (cities.Any((c) => c.Name == cityName)) {
+                return BadRequest("Такой город уже существует");
+            }
+
+            var city = new City
+            {
+                Name = cityName,
+            };
+
+            await context.Citys.AddAsync(city);
+            await context.SaveChangesAsync();
+
+            return Ok("Город успешно добавлен");
+        }
+        
     }
 }

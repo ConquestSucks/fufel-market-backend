@@ -6,10 +6,6 @@
 
         public required string Name { get; set; }
 
-        public required string TimeZone { get; set; }
-
-        public required int AdvertisementId { get; set; }
-
-        public required Advertisement Advertisement { get; set; }
+        public string? TimeZone { get; set; }
     }
 }

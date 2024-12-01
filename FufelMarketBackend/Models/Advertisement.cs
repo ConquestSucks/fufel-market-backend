@@ -5,16 +5,18 @@ namespace FufelMarketBackend.Models;
 public sealed class Advertisement
 {
     public int Id { get; set; }
+
+    public required int UserId { get; set; }
     
-    public int UserId { get; set; }
+    public required int CityId { get; set; }
 
-    public int CategoryId { get; set; }
+    public required int CategoryId { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; } = null;
 
-    public bool Published { get; set; }
+    public bool Published { get; set; } = false;
 
     [StringLength(40)]
     public required string Title { get; set; }
@@ -26,11 +28,11 @@ public sealed class Advertisement
 
     public ulong Price { get; set; }
     
-    public required City City { get; set; }
+    public City? City { get; set; }
 
-    public required Category Category { get; set; } 
+    public Category? Category { get; set; } 
 
-    public required User User { get; set; }
+    public User? User { get; set; }
 
     public ICollection<Feedback> Feedbacks { get; init; } = [];
 }

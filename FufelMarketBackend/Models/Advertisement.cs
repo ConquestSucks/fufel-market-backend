@@ -27,12 +27,12 @@ public sealed class Advertisement
     //public string Image { get; set; }
 
     public ulong Price { get; set; }
-    
-    public City? City { get; set; }
 
-    public Category? Category { get; set; } 
+    public City City { get; set; } = null!;
 
-    public User? User { get; set; }
+    public Category Category { get; set; } = null!;
+
+    public User User { get; set; } = null!;
 
     public ICollection<Feedback> Feedbacks { get; init; } = [];
 }

@@ -1,7 +1,9 @@
-﻿using DevOne.Security.Cryptography.BCrypt;
+﻿using FufelMarketBackend.Commands;
 using FufelMarketBackend.Data;
 using FufelMarketBackend.Models;
+using FufelMarketBackend.Queries;
 using FufelMarketBackend.Vms;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,12 +11,12 @@ namespace FufelMarketBackend.Controllers
 {
     [Route("/api/[controller]/")]
     [ApiController]
-    public class UserController(AppDbContext context) : ControllerBase
+    public class UserController(AppDbContext context, ISender mediator) : ControllerBase
     {
         [HttpGet("getUsers")]
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<List<UserVm>> GetUsers()
         {
-            return await context.Users.ToListAsync();
+            return await mediator.Send(new GetUsersQuery());
         }
 
         [HttpGet("getUser/{id:int}")]
@@ -24,33 +26,9 @@ namespace FufelMarketBackend.Controllers
         }
 
         [HttpPost("signUp")]
-        public async Task<ActionResult> SignUp([FromBody] UserVm userVm)
+        public async Task<int?> SignUp(SignUpCmd cmd)
         {
-            var passwordHash = BCryptHelper.HashPassword(userVm.Password, BCryptHelper.GenerateSalt());
-            if (string.IsNullOrWhiteSpace(passwordHash))
-                return BadRequest("Пароль не указан");
-
-            if (string.IsNullOrWhiteSpace(userVm.Email))
-                return BadRequest("Почта не указана");
-            
-            if (string.IsNullOrWhiteSpace(userVm.FirstName))
-                return BadRequest("Имя не указано");
-            
-            if (string.IsNullOrWhiteSpace(userVm.LastName))
-                return BadRequest("Фамилия не указана");
-            
-            var user = new User
-            {
-                FirstName = userVm.FirstName,
-                LastName = userVm.LastName,
-                Email = userVm.Email,
-                PasswordHash = passwordHash
-            };
-
-            await context.Users.AddAsync(user);
-            await context.SaveChangesAsync();
-
-            return Ok();
+            return await mediator.Send(cmd);
         }
 
         [HttpPost("signIn")]
@@ -60,7 +38,7 @@ namespace FufelMarketBackend.Controllers
             if (user is null)
                 return BadRequest("Неверный логин или пароль");
             
-            var isPasswordCorrect = BCryptHelper.CheckPassword(password, user.PasswordHash);
+            var isPasswordCorrect = BCrypt.Net.BCrypt.Verify(password, user.PasswordHash);
             
             return isPasswordCorrect ? Ok("Вы успешно авторизовались") : BadRequest("Неверный логин или пароль");
         }

@@ -1,9 +1,11 @@
 using FufelMarketBackend.Models;
 using System.ComponentModel.DataAnnotations;
+using AutoMapper;
+using FufelMarketBackend.Mapper;
 
 namespace FufelMarketBackend.Vms;
 
-public class AdvertisementVm
+public class AdvertisementVm : IMapTo<Advertisement>, IMapFrom<Advertisement>
 {
     public required int UserId { get; set; }
 

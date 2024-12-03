@@ -7,6 +7,8 @@ namespace FufelMarketBackend.Vms;
 
 public class AdvertisementVm : IMapTo<Advertisement>, IMapFrom<Advertisement>
 {
+    public int Id { get; set; } 
+    
     public required int UserId { get; set; }
 
     public required int CategoryId { get; set; }

@@ -275,7 +275,6 @@ C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\FufelMarketBackend.runtimeconfig.json
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\FufelMarketBackend.dll
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\FufelMarketBackend.pdb
-C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\DevOne.Security.Cryptography.BCrypt.dll
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\Microsoft.Build.Locator.dll
@@ -404,3 +403,8 @@ C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\obj\Debug\net8
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\obj\Debug\net8.0\FufelMarketBackend.pdb
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\obj\Debug\net8.0\FufelMarketBackend.genruntimeconfig.cache
 C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\obj\Debug\net8.0\ref\FufelMarketBackend.dll
+C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\AutoMapper.Collection.dll
+C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\MediatR.dll
+C:\Users\Mikhailo\Desktop\fufel-market-backend\FufelMarketBackend\bin\Debug\net8.0\MediatR.Contracts.dll

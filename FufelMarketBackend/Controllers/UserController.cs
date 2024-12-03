@@ -1,11 +1,10 @@
-﻿using FufelMarketBackend.Commands;
+﻿using System.Net;
 using FufelMarketBackend.Data;
-using FufelMarketBackend.Models;
-using FufelMarketBackend.Queries;
+using FufelMarketBackend.UserCQ.Queries;
+using FufelMarketBackend.UserCQ.Commands;
 using FufelMarketBackend.Vms;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace FufelMarketBackend.Controllers
 {
@@ -20,9 +19,12 @@ namespace FufelMarketBackend.Controllers
         }
 
         [HttpGet("getUser/{id:int}")]
-        public async Task<User?> GetUser(int id)
+        public async Task<UserVm?> GetUser(int id)
         {
-            return await context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            return await mediator.Send(new GetUserQuery
+            {
+                Id = id
+            });
         }
 
         [HttpPost("signUp")]
@@ -32,15 +34,9 @@ namespace FufelMarketBackend.Controllers
         }
 
         [HttpPost("signIn")]
-        public async Task<ActionResult> SignIn([FromQuery] string email, [FromQuery] string password)
+        public async Task<HttpStatusCode> SignIn(SignInCmd cmd)
         {
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Email == email);
-            if (user is null)
-                return BadRequest("Неверный логин или пароль");
-            
-            var isPasswordCorrect = BCrypt.Net.BCrypt.Verify(password, user.PasswordHash);
-            
-            return isPasswordCorrect ? Ok("Вы успешно авторизовались") : BadRequest("Неверный логин или пароль");
+            return await mediator.Send(cmd);
         }
     }
 }

@@ -1,13 +1,10 @@
 ﻿using System.Net;
-using AutoMapper;
-using FufelMarketBackend.Commands;
+using FufelMarketBackend.AdvertisementCQ.Commands;
+using FufelMarketBackend.AdvertisementCQ.Queries;
 using FufelMarketBackend.Data;
-using FufelMarketBackend.Models;
-using FufelMarketBackend.Queries;
 using FufelMarketBackend.Vms;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace FufelMarketBackend.Controllers
 {

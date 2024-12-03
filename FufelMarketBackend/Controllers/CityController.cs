@@ -1,44 +1,37 @@
-﻿using FufelMarketBackend.Data;
-using FufelMarketBackend.Models;
+﻿using System.Net;
+using FufelMarketBackend.AdvertisementCQ.Commands;
+using FufelMarketBackend.CityCQ.Commands;
+using FufelMarketBackend.CityCQ.Queries;
+using FufelMarketBackend.Data;
+using FufelMarketBackend.Vms;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace FufelMarketBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CityController(AppDbContext context) : ControllerBase
+    public class CityController(AppDbContext context, ISender mediator) : ControllerBase
     {
         [HttpGet("getCities")]
-        public async Task<List<City>> GetCities()
+        public async Task<List<CityVm>> GetCities()
         {
-            return await context.Citys.ToListAsync();
+            return await mediator.Send(new GetCitiesQuery());
         }
 
         [HttpGet("getCity/{id:int}")]
-        public async Task<City> GetCity(int id)
+        public async Task<CityVm> GetCity(int id)
         {
-            return await context.Citys.FirstOrDefaultAsync(ad => ad.Id == id);
-        }
-
-        [HttpPost("addCity")]
-        public async Task<ActionResult> PostCity(string cityName) { 
-            var cities = await context.Citys.ToListAsync();
-
-            if (cities.Any((c) => c.Name == cityName)) {
-                return BadRequest("Такой город уже существует");
-            }
-
-            var city = new City
+            return await mediator.Send(new GetCityByIdQuery
             {
-                Name = cityName,
-            };
-
-            await context.Citys.AddAsync(city);
-            await context.SaveChangesAsync();
-
-            return Ok("Город успешно добавлен");
+                Id = id
+            });
         }
-        
+
+        [HttpPost("postCity")]
+        public async Task<HttpStatusCode> PostCity(PostCityCmd cmd)
+        {
+            return await mediator.Send(cmd);
+        }
     }
 }
